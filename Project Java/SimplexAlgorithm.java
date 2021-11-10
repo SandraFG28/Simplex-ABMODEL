@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class SimplexAlgorithm{
     public static void main(String args[]){
 
+        System.out.println("Hola");
         //Variables de la matriz
         int filas = 0, columnas = 0, contador =  1;
         Scanner entrada = new Scanner(System.in);
