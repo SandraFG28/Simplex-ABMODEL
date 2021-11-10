@@ -3,28 +3,29 @@ import java.util.Scanner;
 public class SimplexAlgorithm{
     public static void main(String args[]){
 
-        //Method Scanner 
-        Scanner entry = new Scanner(System.in);
+        //Variables de la matriz
+        int filas = 0, columnas = 0, contador =  1;
+        Scanner entrada = new Scanner(System.in);
 
-        //Variables of the matrix
-        int rows = 0, columns = 0, acumulator = 0;
+        System.out.println("Escribe el número de restricciones que quieres");
+        filas = entrada.nextInt();
 
-        //Declare the matrix
-        int restrictions [][] = new int [rows][columns];
+        filas=filas+1;
+        System.out.println("Escribe la cantidad de variables que tienes");
+        columnas = entrada.nextInt();
+        columnas=columnas+filas;
+        
+        int numeros [][] = new int [filas][columnas];
 
-        //Ask a question of how many rows and colums need
-        System.out.println("How many rows you want? ");
-        rows = entry.nextInt();
-
-        System.out.println("How many columns you want? ");
-        columns = entry.nextInt();
-
-        //Matrix filling begins
-        for(int i = 0; i<rows; i++){
-            for(int j = 0; j<columns; j++){
-                restrictions[j][i] = acumulator;
-                acumulator++;
-                System.out.println("[" + restrictions[j][i] + "]");
+        for(int j = 0; j < filas; j++){
+            for(int i = 0; i < columnas; i++){
+                if(i <= filas){
+                    System.out.println("Ingrese las variable x: " + i + 1);
+                }else if(i > filas && i < columnas - 1){
+                    System.out.println("Ingrese las variable S: " + i + 1);
+                }else{
+                    System.out.println("Ingrese el valor de solucion: " + i + 1);
+                }   
             }
             System.out.println("");
         }
